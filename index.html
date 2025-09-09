@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - Atividade Avaliativa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Minha Lista de Tarefas</h1>
+            <button id="mode-toggle">
+                <i class="fas fa-moon"></i> Modo Escuro
+            </button>
+        </header>
+
+        <p class="description">Organize suas tarefas diárias por categoria e prioridade</p>
+
+        <section class="form-section">
+            <h2 class="form-title">Nova Tarefa</h2>
+            <div class="input-group">
+                <input type="text" id="task-name" placeholder="Nome da tarefa...">
+                <button id="add-btn" class="btn-primary">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+            
+            <div class="form-controls">
+                <div class="form-control">
+                    <label for="task-category">Categoria</label>
+                    <select id="task-category">
+                        <option value="trabalho">Trabalho</option>
+                        <option value="estudos">Estudos</option>
+                        <option value="pessoal" selected>Pessoal</option>
+                        <option value="saude">Saúde</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                
+                <div class="form-control">
+                    <label for="task-priority">Prioridade</label>
+                    <select id="task-priority">
+                        <option value="low">Baixa</option>
+                        <option value="medium" selected>Média</option>
+                        <option value="high">Alta</option>
+                    </select>
+                </div>
+                
+                <div class="form-control">
+                    <label for="task-date">Data Limite</label>
+                    <input type="date" id="task-date">
+                </div>
+            </div>
+        </section>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="trabalho">Trabalho</button>
+            <button class="filter-btn" data-filter="estudos">Estudos</button>
+            <button class="filter-btn" data-filter="pessoal">Pessoal</button>
+            <button class="filter-btn" data-filter="saude">Saúde</button>
+            <button class="filter-btn" data-filter="outros">Outros</button>
+        </div>
+
+        <div class="sort-options">
+            <button class="sort-btn" data-sort="priority">
+                <i class="fas fa-flag"></i> Ordenar por Prioridade
+            </button>
+            <button class="sort-btn" data-sort="date">
+                <i class="fas fa-calendar"></i> Ordenar por Data
+            </button>
+        </div>
+
+        <div class="stats">
+            <span id="total-tasks">Total: 0</span>
+            <span id="completed-tasks">Concluídas: 0</span>
+            <span id="pending-tasks">Pendentes: 0</span>
+        </div>
+
+        <ul id="task-list" class="task-list">
+            <li class="empty-state">
+                <i class="fas fa-clipboard-list"></i>
+                <p>Nenhuma tarefa encontrada</p>
+            </li>
+        </ul>
+
+        <footer>
+            <button style="display: none;" id="mode-toggle-bottom">
+                <i class="fas fa-moon"></i> Modo Escuro
+            </button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
